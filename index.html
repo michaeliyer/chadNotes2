@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🎧 Chad's New Audio Player 🎧</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="player-container">
+      <h1>🎧 Chad's NewAudio Player 🎧</h1>
+
+      <div class="track">
+        <h2>1. Sample Track</h2>
+        <audio id="audio1" preload="metadata" crossorigin="anonymous">
+          <source
+            src="https://dl.dropboxusercontent.com/scl/fi/7fac1txan44n7t6qgdq81/1-01-He-Loved-Him-Madly.mp3?rlkey=xr72ypz7q1r3yjlun3nr93fia&st=8wluo1w8"
+            type="audio/mpeg"
+          />
+          Your browser does not support the audio element.
+        </audio>
+        <div class="controls">
+          <button data-audio="audio1">▶️</button>
+          <div class="time-wrapper">
+            <span class="time-display">0:00 / 0:00</span>
+            <input type="range" data-seek="audio1" value="0" />
+          </div>
+          <input
+            type="range"
+            data-volume="audio1"
+            min="0"
+            max="1"
+            step="0.01"
+            value="1"
+          />
+          <canvas
+            class="visualizer"
+            data-visualizer="audio1"
+            height="40"
+          ></canvas>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
