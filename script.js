@@ -56,6 +56,18 @@ document.querySelectorAll("button[data-audio]").forEach((button) => {
   );
   const timeDisplay = button.parentElement.querySelector(".time-display");
   const canvas = document.querySelector(`canvas[data-visualizer="${audioId}"]`);
+  const trackTitle = document.getElementById(
+    `track-title-${audioId.replace("audio", "")}`
+  );
+
+  // Set the audio source and title from config
+  if (audioSources[audioId]) {
+    const source = audio.querySelector("source");
+    source.src = audioSources[audioId].url;
+    trackTitle.textContent = audioSources[audioId].title;
+    audio.load(); // Reload the audio element with new source
+  }
+
   canvas.width = canvas.offsetWidth;
   canvas.height = canvas.offsetHeight;
 
